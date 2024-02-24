@@ -1,26 +1,35 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+import React from "react";
+import { Navbar } from "../component/navbar";
 import "../../styles/home.css";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
-
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">
-				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
-			</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://start.4geeksacademy.com/starters/react-flask">
-					Read documentation
-				</a>
-			</p>
-		</div>
-	);
+  return (
+    <>
+      <Navbar />
+      <div className="data-card container rounded bg-secondary text-light">
+        <div className="row my-3">
+          <div className="col-12 col-lg-3 d-flex justify-content-center">
+            <img
+              src="https://media.vogue.es/photos/5ff05e472361f90ef2d5d967/4:3/w_2160,h_1620,c_limit/HP_TOTORO_Registration_2880x1620.jpg"
+              className="home-image rounded mx-3 my-3"
+            />
+          </div>
+          <div className="col-12 col-lg-6 d-flex justify-content-center">
+            <span className="my-4 text-home">WELCOME TO MY FIRST LOGIN </span>
+          </div>
+          <div className="col-12 col-lg-3 d-flex justify-content-center">
+            <img
+              src="https://media.vogue.es/photos/5ff05e472361f90ef2d5d967/4:3/w_2160,h_1620,c_limit/HP_TOTORO_Registration_2880x1620.jpg"
+              className="home-image rounded mx-3 my-3"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="data-card container rounded bg-secondary text-light d-flex justify-content-center">
+        <span className="my-3">
+          Please press the button register to test the authentification.
+        </span>
+      </div>
+    </>
+  );
 };
